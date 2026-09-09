@@ -15,15 +15,30 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-export function ContactSection() {
+interface ContactSectionProps {
+  initialProjectSummary?: string;
+}
+
+export function ContactSection({ initialProjectSummary }: ContactSectionProps) {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    projectType: 'Custom WordPress Theme',
+    projectType: 'GoHighLevel Sub-Account & Snapshot Setup',
     budget: '$2,000 - $5,000',
     timeline: 'Within 1 month',
-    message: '',
+    message: initialProjectSummary || '',
   });
+
+  // Update message if initialProjectSummary changes
+  const [lastPropSummary, setLastPropSummary] = useState(initialProjectSummary);
+  if (initialProjectSummary && initialProjectSummary !== lastPropSummary) {
+    setLastPropSummary(initialProjectSummary);
+    setFormState((prev) => ({
+      ...prev,
+      message: initialProjectSummary,
+      projectType: 'GoHighLevel Sub-Account & Snapshot Setup',
+    }));
+  }
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -43,7 +58,7 @@ export function ContactSection() {
     setFormState({
       name: '',
       email: '',
-      projectType: 'Custom WordPress Theme',
+      projectType: 'GoHighLevel Sub-Account & Snapshot Setup',
       budget: '$2,000 - $5,000',
       timeline: 'Within 1 month',
       message: '',
@@ -65,11 +80,11 @@ export function ContactSection() {
             <span>Initiate Collaboration</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-100 tracking-tight mb-4">
-            Let’s Build Something Exceptional
+            Let’s Build Your GoHighLevel Engine
           </h2>
           <p className="text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed">
-            Ready to upgrade your website speed, launch a custom WordPress architecture, or build
-            a high-converting sales funnel? Let’s connect today.
+            Ready to automate your lead nurture, eliminate appointment no-shows, launch custom funnels,
+            or deploy a turnkey GoHighLevel SaaS snapshot? Let’s connect today.
           </p>
         </div>
 
@@ -96,12 +111,12 @@ export function ContactSection() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-100">
-                    Message Dispatched Successfully!
+                    GHL Project Request Dispatched!
                   </h3>
                   <p className="text-sm text-slate-300 max-w-md">
                     Thank you, <strong className="text-amber-400">{formState.name || 'Friend'}</strong>.
-                    Ramelo has received your project inquiry and will reply to{' '}
-                    <span className="text-teal-300 font-mono">{formState.email}</span> within 24 business hours.
+                    Ramelo has received your GoHighLevel project requirements and will reply to{' '}
+                    <span className="text-amber-300 font-mono">{formState.email}</span> within 24 business hours.
                   </p>
                   <div className="pt-4">
                     <button
@@ -152,7 +167,7 @@ export function ContactSection() {
                     {/* Project Type */}
                     <div>
                       <label htmlFor="contact-project-type" className="block text-xs font-semibold text-slate-300 mb-2">
-                        Project Type
+                        Primary GHL Requirement
                       </label>
                       <select
                         id="contact-project-type"
@@ -160,12 +175,13 @@ export function ContactSection() {
                         onChange={(e) => setFormState({ ...formState, projectType: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-sm text-slate-100 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors"
                       >
-                        <option value="Custom WordPress Theme">Custom WordPress Theme</option>
-                        <option value="WooCommerce Store Setup">WooCommerce E-Commerce Store</option>
-                        <option value="Elementor Pro & Redesign">Elementor Pro / FSE Redesign</option>
-                        <option value="GoHighLevel Marketing Funnel">GoHighLevel (GHL) Funnel</option>
-                        <option value="Speed Optimization & Core Web Vitals">Speed & Core Web Vitals Overhaul</option>
-                        <option value="Full Retainer / Agency Partnership">Monthly Retainer / Partnership</option>
+                        <option value="GoHighLevel Sub-Account & Snapshot Setup">Turnkey Sub-Account & Snapshot</option>
+                        <option value="High-Converting Sales Funnel & Checkout">High-Converting Funnel & 2-Step Order Form</option>
+                        <option value="Speed-to-Lead SMS & Workflow Automations">Speed-to-Lead SMS & Workflow Automations</option>
+                        <option value="Agency SaaS Mode & Client Rebilling">Agency SaaS Mode & Client Rebilling</option>
+                        <option value="Custom CSS & JavaScript Coding for GHL">Custom CSS / JavaScript Injections for GHL</option>
+                        <option value="WordPress to GHL Webhook & API Bridge">WordPress / WooCommerce to GHL Webhook Bridge</option>
+                        <option value="Monthly GHL Optimization & Retainer">Monthly GHL Retainer & Optimization</option>
                       </select>
                     </div>
 
@@ -192,7 +208,7 @@ export function ContactSection() {
                   {/* Message */}
                   <div>
                     <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-300 mb-2">
-                      Project Details & Goals *
+                      Project Details, Current CRM & Goals *
                     </label>
                     <textarea
                       id="contact-message"
@@ -200,7 +216,7 @@ export function ContactSection() {
                       rows={4}
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      placeholder="Briefly describe what you're looking to build, current challenges, and any specific deadlines..."
+                      placeholder="Briefly describe your business, current CRM setup (or lack thereof), workflows needed, and target go-live date..."
                       className="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors resize-none"
                     />
                   </div>
@@ -209,14 +225,14 @@ export function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 hover:from-amber-300 hover:to-orange-400 transition-all shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                    className="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-orange-400 via-orange-500 to-orange-700 hover:from-orange-300 hover:to-orange-800 transition-all shadow-lg shadow-orange-500/25 hover:shadow-orange-500/35 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <span>Sending Your Request...</span>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>Send Project Inquiry</span>
+                        <span>Send GoHighLevel Inquiry</span>
                       </>
                     )}
                   </button>

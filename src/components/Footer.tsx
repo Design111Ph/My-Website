@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm">
-              Crafting high-performance, conversion-driven WordPress architectures and modern UI/UX design from Iloilo, Philippines to the world.
+              Crafting high-performance, conversion-driven GoHighLevel funnels, automated CRM architectures, and bespoke sub-accounts from Iloilo, Philippines to the world.
             </p>
           </div>
 
@@ -34,6 +34,9 @@ export function Footer() {
             </a>
             <a href="#skills" className="hover:text-amber-400 transition-colors">
               Skills
+            </a>
+            <a href="#ghl-interactive" className="hover:text-amber-400 transition-colors">
+              GHL Simulator
             </a>
             <a href="#portfolio" className="hover:text-amber-400 transition-colors">
               Portfolio
@@ -108,7 +111,7 @@ export function Footer() {
             © {new Date().getFullYear()} Ramelo Lozada. All rights reserved.
           </div>
           <div className="flex items-center gap-2">
-            <span>Senior WordPress Developer & Designer</span>
+            <span>Senior GoHighLevel Architect & Automation Specialist</span>
             <span>•</span>
             <span className="text-teal-400 font-mono">Iloilo City, Philippines</span>
           </div>

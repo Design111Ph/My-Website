@@ -58,14 +58,14 @@ export function AboutSection({ onContactClick }: AboutSectionProps) {
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111C30] border border-slate-800 text-xs font-semibold text-amber-400 mb-3.5">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Senior Developer Profile</span>
+            <span>GoHighLevel Specialist Profile</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight mb-4">
             About Ramelo Lozada
           </h2>
           <p className="text-slate-400 max-w-2xl text-base leading-relaxed">
-            A seasoned WordPress engineer and designer dedicated to building conversion-focused,
-            ultra-fast, and custom digital experiences that solve real business problems.
+            A seasoned GoHighLevel (GHL) specialist, CRM architect, and funnel engineer dedicated to building
+            automated revenue engines, high-converting pipelines, and bulletproof sub-accounts.
           </p>
         </div>
 
@@ -83,43 +83,36 @@ export function AboutSection({ onContactClick }: AboutSectionProps) {
             <div className="p-6 sm:p-8 rounded-2xl bg-[#111C30]/70 border border-slate-800 backdrop-blur-md">
               <h3 className="text-xl font-bold text-slate-100 mb-4 flex items-center gap-2.5">
                 <Compass className="w-5 h-5 text-amber-400" />
-                <span>8+ Years of Technical Craftsmanship</span>
+                <span>8+ Years of Technical & Automation Craftsmanship</span>
               </h3>
 
               <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 <p>
                   Based in <strong className="text-slate-100 font-semibold">Iloilo City, Philippines</strong>,
-                  I’ve spent the last 8+ years immersed in the WordPress ecosystem—evolving from custom theme development
-                  and complex WooCommerce setups into full-funnel digital architecture, UI/UX prototyping, and
-                  modern headless integrations.
+                  I specialize in turning <span className="text-amber-400 font-semibold">GoHighLevel (GHL)</span> into a scalable revenue machine for marketing agencies, clinics, SaaS startups, high-ticket coaches, and real estate brokerages worldwide.
                 </p>
                 <p>
-                  Unlike developers who merely stitch plugins together or designers who don’t understand database queries,
-                  I bridge the gap: I design in <span className="text-teal-300 font-medium">Figma</span> with user psychology
-                  and conversion rates in mind, then engineer clean, modular <span className="text-amber-300 font-medium">PHP, WordPress, & Tailwind</span> code
-                  that delivers Google PageSpeed scores in the high 90s.
+                  Unlike typical implementers who rely on cookie-cutter snapshots, I engineer bespoke solutions:
+                  I code <span className="text-teal-300 font-medium">custom CSS and JavaScript</span> to make GHL funnels look like premium custom web apps, architect <span className="text-amber-300 font-medium">multi-branch conditional workflows (if/else logic)</span>, and deploy <span className="text-orange-300 font-medium">Speed-to-Lead 2-way SMS engines</span> that respond to inbound prospects in under 45 seconds.
                 </p>
                 <p>
-                  My work powers high-traffic consumer ticketing platforms like{' '}
-                  <span className="text-slate-100 font-medium">The Yoga Expo</span>, specialized health SaaS portals like{' '}
-                  <span className="text-slate-100 font-medium">LunaFast</span>, multi-million-dollar real estate brokerages,
-                  and automated marketing engines built on <span className="text-orange-300 font-medium">GoHighLevel</span>.
+                  Whether it’s architecting turnkey agency SaaS snapshots with Stripe rebilling, setting up automated calendar booking engines that eliminate appointment no-shows, or connecting external platforms (WordPress, Shopify, Stripe, Meta Ads) via webhooks and Make.com, I build resilient systems that run 24/7 without breaking.
                 </p>
               </div>
 
               {/* Core Pillars */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-800">
                 <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                  <div className="text-amber-400 font-bold text-sm mb-1">Pixel Precision</div>
-                  <div className="text-xs text-slate-400">Zero clunky templates. Clean responsive layouts built for conversion.</div>
+                  <div className="text-amber-400 font-bold text-sm mb-1">Custom GHL Code</div>
+                  <div className="text-xs text-slate-400">Custom CSS, sticky order buttons, and styled survey logic.</div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                  <div className="text-teal-400 font-bold text-sm mb-1">Extreme Speed</div>
-                  <div className="text-xs text-slate-400">Asset minification, edge caching, and lightweight semantic code.</div>
+                  <div className="text-teal-400 font-bold text-sm mb-1">Speed-to-Lead</div>
+                  <div className="text-xs text-slate-400">Sub-minute 2-way SMS & Missed Call Text Back (MCTB).</div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80">
-                  <div className="text-orange-400 font-bold text-sm mb-1">Business First</div>
-                  <div className="text-xs text-slate-400">Clear communication, transparent timelines, and measurable ROI.</div>
+                  <div className="text-orange-400 font-bold text-sm mb-1">Turnkey Snapshots</div>
+                  <div className="text-xs text-slate-400">Deployable sub-accounts with pre-configured custom fields & tags.</div>
                 </div>
               </div>
             </div>
@@ -127,24 +120,32 @@ export function AboutSection({ onContactClick }: AboutSectionProps) {
             {/* Resume Summary Highlights */}
             <div className="p-6 rounded-2xl bg-[#111C30]/50 border border-slate-800/80">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4">
-                What Sets My Work Apart
+                What Sets My GoHighLevel Builds Apart
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-300">
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>Deep expertise in ACF Pro & Custom Gutenberg Blocks</span>
+                  <span>Turnkey industry snapshots & SaaS mode rebilling setup</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>High-ticket WooCommerce subscriptions & custom checkouts</span>
+                  <span>Multi-branch conditional workflows with if/else decision logic</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>GoHighLevel CRM funnels, pipeline automation & webhooks</span>
+                  <span>Speed-to-lead SMS & automated Missed Call Text Back (MCTB)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>AI-accelerated development (ChatGPT, Claude, Gemini pipelines)</span>
+                  <span>Custom CSS/JS injected funnels & bespoke 2-step checkouts</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>Webhook integrations with Zapier, Make.com & Stripe APIs</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span>WordPress / WooCommerce to GoHighLevel data bridge sync</span>
                 </div>
               </div>
             </div>

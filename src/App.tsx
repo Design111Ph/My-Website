@@ -1,17 +1,23 @@
+import { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsBar } from './components/StatsBar';
 import { AboutSection } from './components/AboutSection';
 import { SkillsSection } from './components/SkillsSection';
+import { GHLInteractiveExplorer } from './components/GHLInteractiveExplorer';
 import { PortfolioSection } from './components/PortfolioSection';
 import { ProcessSection } from './components/ProcessSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { NumbersSection } from './components/NumbersSection';
 import { ContactSection } from './components/ContactSection';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 
 export default function App() {
+  const [inquirySummary, setInquirySummary] = useState<string>('');
+
   const scrollToContact = () => {
     const contactEl = document.getElementById('contact');
     if (contactEl) {
@@ -26,49 +32,62 @@ export default function App() {
     }
   };
 
+  const handleApplyToInquiry = (summary: string) => {
+    setInquirySummary(summary);
+    scrollToContact();
+  };
+
   return (
-    <div className="min-h-screen bg-[#0B1120] text-slate-100 font-sans selection:bg-amber-400 selection:text-slate-950">
-      {/* Viewport Scroll Depth Reading Progress */}
-      <ScrollProgressBar />
+    <ThemeProvider>
+      <div className="min-h-screen bg-[#0B1120] text-slate-100 font-sans selection:bg-amber-400 selection:text-slate-950 transition-colors duration-300">
+        {/* Viewport Scroll Depth Reading Progress */}
+        <ScrollProgressBar />
 
-      {/* Navigation */}
-      <Navbar onContactClick={scrollToContact} />
+        {/* Navigation */}
+        <Navbar onContactClick={scrollToContact} />
 
-      {/* Main Sections */}
-      <main>
-        {/* Hero Section */}
-        <Hero
-          onViewWork={scrollToPortfolio}
-          onContactClick={scrollToContact}
-        />
+        {/* Main Sections */}
+        <main>
+          {/* Hero Section */}
+          <Hero
+            onViewWork={scrollToPortfolio}
+            onContactClick={scrollToContact}
+          />
 
-        {/* Quick Stats Bar */}
-        <StatsBar />
+          {/* Quick Stats Bar */}
+          <StatsBar />
 
-        {/* About Me Section */}
-        <AboutSection onContactClick={scrollToContact} />
+          {/* About Me Section */}
+          <AboutSection onContactClick={scrollToContact} />
 
-        {/* Core Skills with Animated Progress Bars */}
-        <SkillsSection />
+          {/* Core Skills with Interactive Filter Tabs */}
+          <SkillsSection />
 
-        {/* Selected Work / Portfolio Showcase */}
-        <PortfolioSection />
+          {/* Interactive GoHighLevel Automation & Workflow Simulator */}
+          <GHLInteractiveExplorer onApplyToInquiry={handleApplyToInquiry} />
 
-        {/* Proven 6-Step Work Process */}
-        <ProcessSection />
+          {/* Selected Work / Portfolio Showcase */}
+          <PortfolioSection />
 
-        {/* Client Testimonials */}
-        <TestimonialsSection />
+          {/* Proven 6-Step Work Process */}
+          <ProcessSection />
 
-        {/* By The Numbers Expanded Track Record */}
-        <NumbersSection />
+          {/* Client Testimonials */}
+          <TestimonialsSection />
 
-        {/* Contact & Inquiry Section */}
-        <ContactSection />
-      </main>
+          {/* By The Numbers Expanded Track Record */}
+          <NumbersSection />
 
-      {/* Footer */}
-      <Footer />
-    </div>
+          {/* Contact & Inquiry Section */}
+          <ContactSection initialProjectSummary={inquirySummary} />
+        </main>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Floating WhatsApp Quick Contact Button */}
+        <FloatingWhatsApp />
+      </div>
+    </ThemeProvider>
   );
 }

@@ -61,18 +61,21 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
             {/* Main Name & Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight leading-[1.1] mb-4">
               Hi, I’m{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-amber-200">
+              <span
+                id="hero-developer-name"
+                className="hero-name-text inline-block font-extrabold"
+              >
                 Ramelo Lozada
               </span>
             </h1>
 
             <div className="flex items-center gap-3 mb-6">
               <span className="text-xl sm:text-2xl font-semibold text-slate-200">
-                WordPress Developer & Designer
+                GoHighLevel Specialist & CRM Architect
               </span>
-              <span className="hidden sm:inline-block w-2 h-2 rounded-full bg-teal-400" />
-              <span className="hidden sm:inline-block text-sm font-medium text-teal-300/90">
-                UI/UX & WooCommerce Architect
+              <span className="hidden sm:inline-block w-2 h-2 rounded-full bg-amber-400" />
+              <span className="hidden sm:inline-block text-sm font-medium text-amber-300/90">
+                Funnel & Automation Engineer
               </span>
             </div>
 
@@ -85,19 +88,19 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8 w-full max-w-xl text-xs sm:text-sm text-slate-300">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Custom WordPress Themes & Headless</span>
+                <span>Custom GHL Funnels & 2-Step Checkouts</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Conversion-Focused WooCommerce</span>
+                <span>Multi-Branch Workflows & If/Else Logic</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>95+ PageSpeed & Core Web Vitals</span>
+                <span>Speed-to-Lead & Missed Call Text Back</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>GoHighLevel & Marketing Funnels</span>
+                <span>Turnkey Snapshots & SaaS Mode Rebilling</span>
               </div>
             </div>
 
@@ -106,7 +109,7 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
               <button
                 id="hero-cta-portfolio"
                 onClick={onViewWork}
-                className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 hover:from-amber-300 hover:to-orange-400 transition-all duration-200 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-orange-400 via-orange-500 to-orange-700 hover:from-orange-300 hover:to-orange-800 transition-all duration-200 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/35 cursor-pointer"
               >
                 <span>View My Work</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -167,15 +170,13 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
                   <MessageCircle className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
-                  id="hero-social-wordpress"
-                  href={PERSONAL_INFO.socialLinks.wordpress}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group px-2.5 py-1.5 rounded-lg bg-[#111C30] border border-slate-800 text-xs font-semibold text-slate-300 hover:text-teal-400 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-500/10 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-1.5"
-                  aria-label="WordPress.org Profile"
+                  id="hero-social-ghl"
+                  href="#ghl-interactive"
+                  className="group px-2.5 py-1.5 rounded-lg bg-[#111C30] border border-amber-500/40 text-xs font-semibold text-amber-300 hover:text-amber-200 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/15 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-1.5"
+                  aria-label="GoHighLevel Architecture"
                 >
-                  <span className="font-serif font-bold text-teal-400 text-sm transform group-hover:scale-110 transition-transform duration-200">W</span>
-                  <span>.org</span>
+                  <span className="font-mono font-bold text-amber-400 text-xs transform group-hover:scale-110 transition-transform duration-200">GHL</span>
+                  <span>Pro</span>
                 </a>
               </div>
             </div>
@@ -198,7 +199,7 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
                 <img
                   id="hero-headshot-image"
                   src={PERSONAL_INFO.portrait}
-                  alt="Ramelo Lozada - Senior WordPress Developer & Designer"
+                  alt="Ramelo Lozada - GoHighLevel Specialist & CRM Architect"
                   className="w-full h-full object-cover object-top sm:object-center transform hover:scale-102 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -209,7 +210,7 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
                 {/* Top Floating Badge */}
                 <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-[#0B1120]/85 backdrop-blur-md border border-slate-700/80 text-[11px] font-semibold text-slate-200 flex items-center gap-1.5 shadow-md">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Available for Projects</span>
+                  <span>Available for GHL Builds</span>
                 </div>
 
                 {/* Bottom Overlay Info Tag */}
@@ -218,18 +219,18 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
                     <div className="text-xs font-semibold text-slate-100 flex items-center gap-1.5">
                       <span>Ramelo Lozada</span>
                       <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">
-                        PRO
+                        GHL PRO
                       </span>
                     </div>
                     <div className="text-[11px] text-slate-400">
-                      Senior WordPress Dev & UI Designer
+                      GoHighLevel Specialist & CRM Architect
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-[10px] uppercase tracking-wider text-slate-400 block font-mono">
                       Location
                     </span>
-                    <span className="text-xs font-semibold text-teal-300">
+                    <span className="text-xs font-semibold text-amber-300">
                       Iloilo, PH
                     </span>
                   </div>
@@ -242,12 +243,12 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-4 -right-4 px-3.5 py-2 rounded-xl bg-[#111C30]/95 backdrop-blur-md border border-slate-700 shadow-xl flex items-center gap-2.5"
               >
-                <div className="w-7 h-7 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400">
+                <div className="w-7 h-7 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-400">
                   <Zap className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-100">98/100</div>
-                  <div className="text-[10px] text-slate-400">PageSpeed Score</div>
+                  <div className="text-xs font-bold text-slate-100">&lt; 45 sec</div>
+                  <div className="text-[10px] text-slate-400">Speed-to-Lead</div>
                 </div>
               </motion.div>
 
@@ -260,8 +261,8 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
                   <Layers className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-100">150+ Sites</div>
-                  <div className="text-[10px] text-slate-400">Delivered Globally</div>
+                  <div className="text-xs font-bold text-slate-100">120+ Builds</div>
+                  <div className="text-[10px] text-slate-400">Funnels & Snapshots</div>
                 </div>
               </motion.div>
             </div>

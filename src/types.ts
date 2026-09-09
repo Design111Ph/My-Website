@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'WordPress & WooCommerce' | 'Elementor & Funnels' | 'Custom Solutions' | 'Web Apps';
+  category: 'GHL Funnels & Websites' | 'Automations & Workflows' | 'SaaS Snapshots & CRM' | 'Integrations & Webhooks' | 'Memberships & Portals';
   thumbnail: string;
   shortDescription: string;
   fullDescription: string;
@@ -13,6 +13,14 @@ export interface Project {
   liveUrl?: string;
   demoBadge?: string;
   year: string;
+}
+
+export interface GHLWorkflowStep {
+  id: string;
+  type: 'trigger' | 'action' | 'condition' | 'delay' | 'webhook';
+  title: string;
+  description: string;
+  badge: string;
 }
 
 export interface SkillItem {
@@ -27,6 +35,8 @@ export interface SkillGroup {
   title: string;
   description: string;
   iconName: string;
+  badge?: string;
+  keyFeatures?: string[];
   skills: SkillItem[];
 }
 

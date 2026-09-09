@@ -45,7 +45,7 @@ export function NumbersSection() {
                   </span>
                 </div>
 
-                <div className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-amber-400 mb-2 tracking-tight">
+                <div className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-400 to-orange-600 mb-2 tracking-tight">
                   {stat.number}
                 </div>
 

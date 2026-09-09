@@ -11,10 +11,11 @@ export function PortfolioSection() {
 
   const categories = [
     'All',
-    'WordPress & WooCommerce',
-    'Web Apps',
-    'Custom Solutions',
-    'Elementor & Funnels',
+    'SaaS Snapshots & CRM',
+    'Automations & Workflows',
+    'GHL Funnels & Websites',
+    'Integrations & Webhooks',
+    'Memberships & Portals',
   ];
 
   const filteredProjects =
@@ -35,8 +36,8 @@ export function PortfolioSection() {
             Selected Work & Production Builds
           </h2>
           <p className="text-slate-400 max-w-2xl text-base leading-relaxed">
-            A curated showcase of high-impact WordPress portals, custom WooCommerce engines,
-            and conversion-optimized digital products delivered for international clients.
+            A curated showcase of high-impact GoHighLevel sales funnels, automated 2-way SMS booking engines,
+            SaaS snapshots, and webhook integrations delivered for global businesses.
           </p>
 
           {/* Filter Pills */}
@@ -196,10 +197,16 @@ export function PortfolioSection() {
         {/* Bottom Callout banner */}
         <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#111C30] via-[#14233D] to-[#111C30] border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
-            <h4 className="text-lg font-bold text-slate-100 mb-1">
+            <h4
+              id="portfolio-callout-heading"
+              className="text-lg font-bold text-[#ffbd34] !text-[#ffbd34] mb-1"
+            >
               Have a custom WordPress or WooCommerce challenge?
             </h4>
-            <p className="text-xs sm:text-sm text-slate-400">
+            <p
+              id="portfolio-callout-desc"
+              className="text-xs sm:text-sm text-[#ffbd34] !text-[#ffbd34]"
+            >
               From enterprise speed optimization to custom plugin logic and CRM funnels.
             </p>
           </div>

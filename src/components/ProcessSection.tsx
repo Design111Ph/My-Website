@@ -38,8 +38,8 @@ export function ProcessSection() {
             A Proven 6-Step Work Process
           </h2>
           <p className="text-slate-400 max-w-2xl text-base leading-relaxed">
-            From initial strategy discovery to zero-downtime deployment. A rigorous, battle-tested
-            framework ensuring high quality, transparent communication, and on-time launches.
+            From initial conversion mapping to bulletproof snapshot deployment. A battle-tested
+            framework ensuring airtight automations, high-converting funnels, and zero lead leakage.
           </p>
         </div>
 
