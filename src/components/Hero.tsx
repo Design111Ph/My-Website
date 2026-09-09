@@ -129,47 +129,52 @@ export function Hero({ onViewWork, onContactClick }: HeroProps) {
               </span>
               <div className="flex items-center gap-2.5">
                 <a
+                  id="hero-social-linkedin"
                   href={PERSONAL_INFO.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-slate-700 transition-colors"
+                  className="group p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="LinkedIn Profile"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <Linkedin className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
+                  id="hero-social-github"
                   href={PERSONAL_INFO.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-slate-700 transition-colors"
+                  className="group p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="GitHub Profile"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
+                  id="hero-social-email"
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-slate-700 transition-colors"
+                  className="group p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-lg hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="Send Email"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
+                  id="hero-social-whatsapp"
                   href={PERSONAL_INFO.socialLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-slate-700 transition-colors"
+                  className="group p-2.5 rounded-lg bg-[#111C30] border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="WhatsApp Chat"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
                 </a>
                 <a
+                  id="hero-social-wordpress"
                   href={PERSONAL_INFO.socialLinks.wordpress}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2.5 py-1.5 rounded-lg bg-[#111C30] border border-slate-800 text-xs font-semibold text-slate-300 hover:text-teal-400 hover:border-slate-700 transition-colors flex items-center gap-1.5"
+                  className="group px-2.5 py-1.5 rounded-lg bg-[#111C30] border border-slate-800 text-xs font-semibold text-slate-300 hover:text-teal-400 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-500/10 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-1.5"
                   aria-label="WordPress.org Profile"
                 >
-                  <span className="font-serif font-bold text-teal-400 text-sm">W</span>
+                  <span className="font-serif font-bold text-teal-400 text-sm transform group-hover:scale-110 transition-transform duration-200">W</span>
                   <span>.org</span>
                 </a>
               </div>

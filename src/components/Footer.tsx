@@ -52,47 +52,52 @@ export function Footer() {
           {/* Social Icons & Back to Top */}
           <div className="flex items-center gap-3">
             <a
+              id="footer-social-linkedin"
               href={PERSONAL_INFO.socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 transition-colors"
+              className="group p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-md hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
             </a>
             <a
+              id="footer-social-github"
               href={PERSONAL_INFO.socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 transition-colors"
+              className="group p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-md hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
               aria-label="GitHub"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
             </a>
             <a
+              id="footer-social-email"
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 transition-colors"
+              className="group p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-md hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
               aria-label="Email"
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
             </a>
             <a
+              id="footer-social-whatsapp"
               href={PERSONAL_INFO.socialLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 transition-colors"
+              className="group p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/50 hover:shadow-md hover:shadow-emerald-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
               aria-label="WhatsApp"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
             </a>
 
             <button
+              id="footer-back-to-top"
               onClick={scrollToTop}
-              className="p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-amber-400 transition-colors ml-2 cursor-pointer"
+              className="group p-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-400/50 hover:shadow-md hover:shadow-amber-500/10 hover:scale-110 active:scale-95 transition-all duration-200 ml-2 cursor-pointer"
               title="Back to Top"
               aria-label="Back to Top"
             >
-              <ArrowUp className="w-4 h-4" />
+              <ArrowUp className="w-4 h-4 transform group-hover:-translate-y-0.5 transition-transform duration-200" />
             </button>
           </div>
         </div>

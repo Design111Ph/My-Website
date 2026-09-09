@@ -257,10 +257,11 @@ export function ContactSection() {
 
               <div className="space-y-3.5">
                 <a
+                  id="contact-channel-email"
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 flex items-center gap-3.5 transition-colors group"
+                  className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-400/50 flex items-center gap-3.5 transition-all duration-200 group hover:scale-[1.02] active:scale-[0.99] hover:shadow-lg hover:shadow-amber-500/5"
                 >
-                  <div className="p-2.5 rounded-lg bg-amber-500/15 text-amber-400 group-hover:bg-amber-500/25 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-amber-500/15 text-amber-400 group-hover:bg-amber-500/25 group-hover:scale-110 transition-all duration-200">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
@@ -272,12 +273,13 @@ export function ContactSection() {
                 </a>
 
                 <a
+                  id="contact-channel-whatsapp"
                   href={PERSONAL_INFO.socialLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 flex items-center gap-3.5 transition-colors group"
+                  className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 flex items-center gap-3.5 transition-all duration-200 group hover:scale-[1.02] active:scale-[0.99] hover:shadow-lg hover:shadow-emerald-500/5"
                 >
-                  <div className="p-2.5 rounded-lg bg-emerald-500/15 text-emerald-400 group-hover:bg-emerald-500/25 transition-colors">
+                  <div className="p-2.5 rounded-lg bg-emerald-500/15 text-emerald-400 group-hover:bg-emerald-500/25 group-hover:scale-110 transition-all duration-200">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
