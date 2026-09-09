@@ -165,10 +165,16 @@ export function AboutSection({ onContactClick }: AboutSectionProps) {
 
               <div className="flex items-center justify-between pb-5 border-b border-slate-800 mb-6">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-slate-400">
+                  <span
+                    id="about-snapshot-label"
+                    className="text-xs font-mono uppercase tracking-widest text-[#ecffe2] block"
+                  >
                     Snapshot
                   </span>
-                  <h3 className="text-lg font-bold text-slate-100">
+                  <h3
+                    id="about-snapshot-heading"
+                    className="text-lg font-bold text-[#7be9c1]"
+                  >
                     Contact & Status
                   </h3>
                 </div>

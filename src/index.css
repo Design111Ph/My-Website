@@ -402,6 +402,17 @@ html.light #ghl-roi-gains-label {
   color: #ffefc4 !important;
 }
 
+/* About Snapshot Label & Heading Styles */
+#about-snapshot-label,
+html.light #about-snapshot-label {
+  color: #ecffe2 !important;
+}
+
+#about-snapshot-heading,
+html.light #about-snapshot-heading {
+  color: #7be9c1 !important;
+}
+
 /* Light Mode Scrollbar */
 html.light ::-webkit-scrollbar-track {
   background: #F1F5F9;
