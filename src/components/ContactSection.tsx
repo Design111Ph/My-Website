@@ -14,6 +14,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { connectToWhatsApp, isDesktopDevice } from '../utils/whatsapp';
 
 interface ContactSectionProps {
   initialProjectSummary?: string;
@@ -293,13 +294,25 @@ export function ContactSection({ initialProjectSummary }: ContactSectionProps) {
                   href={PERSONAL_INFO.socialLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 flex items-center gap-3.5 transition-all duration-200 group hover:scale-[1.02] active:scale-[0.99] hover:shadow-lg hover:shadow-emerald-500/5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    connectToWhatsApp({
+                      phone: PERSONAL_INFO.phone,
+                      message: 'Hi Ramelo! I saw your portfolio and would like to discuss a GoHighLevel project.',
+                      mode: 'auto',
+                    });
+                  }}
+                  className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 flex items-center gap-3.5 transition-all duration-200 group hover:scale-[1.02] active:scale-[0.99] hover:shadow-lg hover:shadow-emerald-500/5 cursor-pointer"
+                  title="WhatsApp Chat (Connects directly to WhatsApp Desktop app on PC/Mac)"
                 >
                   <div className="p-2.5 rounded-lg bg-emerald-500/15 text-emerald-400 group-hover:bg-emerald-500/25 group-hover:scale-110 transition-all duration-200">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-[11px] text-slate-400 font-mono">WhatsApp Direct</div>
+                    <div className="text-[11px] text-slate-400 font-mono flex items-center gap-1.5">
+                      <span>WhatsApp Direct</span>
+                      <span className="text-[10px] text-emerald-400/80 font-mono">App Direct</span>
+                    </div>
                     <div className="text-xs sm:text-sm font-semibold text-slate-200 group-hover:text-emerald-300">
                       {PERSONAL_INFO.phone}
                     </div>

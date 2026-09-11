@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageCircle, X, Send, Sparkles, CheckCheck, ArrowRight, Check, Shuffle, Clock } from 'lucide-react';
+import { MessageCircle, X, Send, Sparkles, CheckCheck, ArrowRight, Check, Shuffle, Clock, Laptop, Globe, ExternalLink } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { connectToWhatsApp, isDesktopDevice, getWhatsAppAppUrl, getWhatsAppWebUrl } from '../utils/whatsapp';
 
 interface QuickTopic {
   id: string;
@@ -77,6 +78,12 @@ export function FloatingWhatsApp() {
   const [isButtonHighlighted, setIsButtonHighlighted] = useState(false);
   const [textareaFlashed, setTextareaFlashed] = useState(false);
   const [shuffleNotice, setShuffleNotice] = useState<string | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [connectingNotice, setConnectingNotice] = useState<{ mode: 'app' | 'web'; text: string } | null>(null);
+
+  useEffect(() => {
+    setIsDesktop(isDesktopDevice());
+  }, []);
 
   // Live local time in Iloilo City, Philippines (GMT+8)
   const getIloiloTime = () => {
@@ -175,10 +182,44 @@ export function FloatingWhatsApp() {
     }
   };
 
-  const handleStartChat = (messageToSend?: string) => {
-    const text = encodeURIComponent(messageToSend || customMessage || 'Hi Ramelo! I would like to discuss a GoHighLevel project.');
-    const whatsappUrl = `https://wa.me/${cleanPhone}?text=${text}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  const handleStartChat = (messageToSend?: string, mode: 'auto' | 'app' | 'web' = 'auto') => {
+    const text = messageToSend || customMessage || 'Hi Ramelo! I would like to discuss a GoHighLevel project.';
+
+    if (mode === 'web') {
+      connectToWhatsApp({
+        phone: cleanPhone,
+        message: text,
+        mode: 'web',
+      });
+      setConnectingNotice({
+        mode: 'web',
+        text: 'Opened WhatsApp Web in a new browser tab.',
+      });
+      setTimeout(() => setConnectingNotice(null), 6000);
+      return;
+    }
+
+    if (isDesktop || mode === 'app') {
+      connectToWhatsApp({
+        phone: cleanPhone,
+        message: text,
+        mode: 'app',
+      });
+      setConnectingNotice({
+        mode: 'app',
+        text: 'Connecting to your WhatsApp Desktop app...',
+      });
+      // Keep notice active so user can click fallback to web if app is not installed
+      setTimeout(() => setConnectingNotice(null), 12000);
+      return;
+    }
+
+    // Mobile auto
+    connectToWhatsApp({
+      phone: cleanPhone,
+      message: text,
+      mode: 'auto',
+    });
   };
 
   return (
@@ -382,11 +423,39 @@ export function FloatingWhatsApp() {
                 </motion.div>
               )}
 
+              {/* Connecting Notice Banner (Allows 1-click fallback to WhatsApp Web if app not installed) */}
+              <AnimatePresence>
+                {connectingNotice && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6, height: 0 }}
+                    animate={{ opacity: 1, y: 0, height: 'auto' }}
+                    exit={{ opacity: 0, y: -6, height: 0 }}
+                    className="p-2.5 rounded-xl bg-emerald-950/90 border border-emerald-500/50 text-xs text-emerald-200 shadow-lg"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 font-medium">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
+                        <span>{connectingNotice.text}</span>
+                      </div>
+                      {connectingNotice.mode === 'app' && (
+                        <button
+                          type="button"
+                          onClick={() => handleStartChat(undefined, 'web')}
+                          className="px-2 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 hover:text-white font-semibold text-[11px] underline shrink-0 cursor-pointer transition-colors"
+                        >
+                          Use Web Instead
+                        </button>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               {/* Action Button - Strongly Highlighted to Draw Attention */}
               <motion.button
                 ref={actionButtonRef}
                 type="button"
-                onClick={() => handleStartChat()}
+                onClick={() => handleStartChat(undefined, 'app')}
                 animate={
                   isButtonHighlighted
                     ? {
@@ -409,15 +478,43 @@ export function FloatingWhatsApp() {
                     ? 'bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 text-slate-950 ring-2 ring-emerald-300 shadow-xl shadow-emerald-500/30'
                     : 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/20 active:scale-[0.98]'
                 }`}
+                title={isDesktop ? 'Connect directly to WhatsApp Desktop App' : 'Open WhatsApp'}
               >
-                <MessageCircle className="w-4 h-4 fill-slate-950 shrink-0" />
+                {isDesktop ? (
+                  <Laptop className="w-4 h-4 text-slate-950 shrink-0" />
+                ) : (
+                  <MessageCircle className="w-4 h-4 fill-slate-950 shrink-0" />
+                )}
                 <span className="truncate">
-                  {isButtonHighlighted
-                    ? `Open WhatsApp with "${activeTopic?.badge || 'Selected Topic'}"`
-                    : `Open WhatsApp (${PERSONAL_INFO.phone})`}
+                  {isDesktop
+                    ? (isButtonHighlighted
+                        ? `Connect in WhatsApp App ("${activeTopic?.badge || 'Selected Topic'}")`
+                        : `Connect to WhatsApp App (${PERSONAL_INFO.phone})`)
+                    : (isButtonHighlighted
+                        ? `Open WhatsApp with "${activeTopic?.badge || 'Selected Topic'}"`
+                        : `Open WhatsApp (${PERSONAL_INFO.phone})`)}
                 </span>
                 <Send className="w-3.5 h-3.5 ml-0.5 shrink-0" />
               </motion.button>
+
+              {/* Desktop Helper & Web Fallback Option */}
+              {isDesktop && (
+                <div className="flex items-center justify-between pt-1 px-1 text-[11px] text-slate-400">
+                  <span className="flex items-center gap-1.5 text-slate-400 text-[10.5px]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span>Direct WhatsApp Desktop app launch</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleStartChat(undefined, 'web')}
+                    className="text-emerald-400 hover:text-emerald-300 hover:underline flex items-center gap-1 cursor-pointer font-medium text-[11px] transition-colors"
+                    title="Open chat in WhatsApp Web browser tab"
+                  >
+                    <Globe className="w-3 h-3" />
+                    <span>Or use WhatsApp Web</span>
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
         )}

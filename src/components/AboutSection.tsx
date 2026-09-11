@@ -13,8 +13,10 @@ import {
   ShieldCheck,
   Compass,
   ArrowRight,
+  MessageCircle,
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { connectToWhatsApp } from '../utils/whatsapp';
 
 interface AboutSectionProps {
   onContactClick: () => void;
@@ -212,16 +214,35 @@ export function AboutSection({ onContactClick }: AboutSectionProps) {
                 </div>
 
                 {/* Phone & Messaging */}
-                <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-teal-500/15 text-teal-400 shrink-0">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] text-slate-400 font-mono">Direct / WhatsApp</div>
-                    <div className="text-xs sm:text-sm font-medium text-slate-200">
-                      {PERSONAL_INFO.phone}
+                <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 flex items-center justify-between gap-3 group hover:border-emerald-500/40 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-teal-500/15 text-teal-400 shrink-0 group-hover:scale-105 transition-transform">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] text-slate-400 font-mono flex items-center gap-1.5">
+                        <span>Direct / WhatsApp</span>
+                        <span className="text-[10px] text-emerald-400/80 font-mono">App Direct</span>
+                      </div>
+                      <div className="text-xs sm:text-sm font-medium text-slate-200">
+                        {PERSONAL_INFO.phone}
+                      </div>
                     </div>
                   </div>
+                  <button
+                    onClick={() => {
+                      connectToWhatsApp({
+                        phone: PERSONAL_INFO.phone,
+                        message: 'Hi Ramelo! I saw your background profile and would like to chat about GoHighLevel architecture.',
+                        mode: 'auto',
+                      });
+                    }}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 text-xs font-semibold transition-all cursor-pointer hover:scale-105 active:scale-95 shrink-0"
+                    title="Chat on WhatsApp (Connects directly to WhatsApp Desktop app on PC/Mac)"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Chat</span>
+                  </button>
                 </div>
 
                 {/* Location */}

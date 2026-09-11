@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   location: 'Iloilo City, Philippines',
   timezone: 'Asia/Manila (GMT+8)',
   email: 'rflozada111@gmail.com',
-  phone: '+63 917 842 1920',
+  phone: '+63 919 539 9729',
   availability: 'Available for GHL Builds & Custom Snapshots',
   availabilityStatus: 'Open for Q2/Q3 Engagements',
   heroValueProp:
@@ -28,7 +28,7 @@ export const PERSONAL_INFO = {
     github: 'https://github.com/rflozada',
     linkedin: 'https://linkedin.com/in/ramelolozada',
     email: 'mailto:rflozada111@gmail.com',
-    whatsapp: 'https://wa.me/639178421920',
+    whatsapp: 'https://wa.me/639195399729',
     calendly: 'https://calendly.com',
   },
 };

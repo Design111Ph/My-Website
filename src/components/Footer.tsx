@@ -1,5 +1,6 @@
 import { ArrowUp, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { connectToWhatsApp } from '../utils/whatsapp';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -87,8 +88,17 @@ export function Footer() {
               href={PERSONAL_INFO.socialLinks.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/50 hover:shadow-md hover:shadow-emerald-500/10 hover:scale-110 active:scale-95 transition-all duration-200"
+              onClick={(e) => {
+                e.preventDefault();
+                connectToWhatsApp({
+                  phone: PERSONAL_INFO.phone,
+                  message: 'Hi Ramelo! I saw your portfolio and would like to chat on WhatsApp.',
+                  mode: 'auto',
+                });
+              }}
+              className="group p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-emerald-400 hover:border-emerald-500/50 hover:shadow-md hover:shadow-emerald-500/10 hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
               aria-label="WhatsApp"
+              title="Chat on WhatsApp (Connects directly to WhatsApp Desktop app on PC/Mac)"
             >
               <MessageCircle className="w-4 h-4 transform group-hover:scale-110 transition-transform duration-200" />
             </a>
