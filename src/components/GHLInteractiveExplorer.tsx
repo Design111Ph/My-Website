@@ -33,7 +33,7 @@ export function GHLInteractiveExplorer({ onApplyToInquiry }: GHLInteractiveExplo
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
 
   // ROI Calculator state
-  const [industry, setIndustry] = useState<'agency' | 'clinic' | 'realty' | 'coaching' | 'contractor'>('clinic');
+  const [industry, setIndustry] = useState<'agency' | 'clinic' | 'realty' | 'coaching' | 'contractor' | 'insurance'>('clinic');
   const [monthlyLeads, setMonthlyLeads] = useState<number>(120);
   const [dealValue, setDealValue] = useState<number>(750);
   const [currentNoShowRate, setCurrentNoShowRate] = useState<number>(25);
@@ -340,7 +340,7 @@ export function GHLInteractiveExplorer({ onApplyToInquiry }: GHLInteractiveExplo
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                   {[
                     { id: 'clinic', name: 'MedSpa & Clinics' },
-                    { id: 'agency', name: 'Agency / SaaS' },
+                    { id: 'insurance', name: 'Insurance' },
                     { id: 'realty', name: 'Real Estate' },
                     { id: 'coaching', name: 'Coaching / Course' },
                     { id: 'contractor', name: 'Home Services' },

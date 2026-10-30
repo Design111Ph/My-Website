@@ -7,6 +7,7 @@ import projectRealEstate from '../assets/images/project_realestate_1788755634388
 import projectBoutiqueBiz from '../assets/images/project_boutique_biz_1788755655313.jpg';
 import projectHealthPortal from '../assets/images/project_health_portal_1788755704052.jpg';
 import projectAgencyFunnel from '../assets/images/project_agency_funnel_1788755725017.jpg';
+import projectAuraRegenerative from '../assets/images/aura_regenerative_clinic_1793343479455.jpg';
 
 export const PERSONAL_INFO = {
   name: 'Ramelo Lozada',
@@ -36,7 +37,7 @@ export const PERSONAL_INFO = {
 export const STATS_HIGHLIGHTS: StatHighlight[] = [
   {
     label: 'GHL Funnels & Snapshots',
-    value: '120+',
+    value: '25+',
     description: 'Custom industry snapshots, high-converting funnels, and turnkey sub-accounts deployed',
     iconName: 'Award',
   },
@@ -48,7 +49,7 @@ export const STATS_HIGHLIGHTS: StatHighlight[] = [
   },
   {
     label: 'Client Pipeline Value',
-    value: '$14M+',
+    value: '$500K+',
     description: 'High-ticket sales opportunities tracked and nurtured through custom GHL pipeline stages',
     iconName: 'Globe',
   },
@@ -162,26 +163,26 @@ export const SKILL_GROUPS: SkillGroup[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'apex-agency-saas-snapshot',
-    title: 'Agency Growth Engine & Turnkey Snapshot',
-    subtitle: 'Full-Stack GHL SaaS Snapshot with Automated Client Onboarding',
-    category: 'SaaS Snapshots & CRM',
-    thumbnail: projectAgencyFunnel,
+    title: 'Aura Regenerative Medicine',
+    subtitle: 'High-Ticket Patient Intake Funnel & Automated Medical CRM',
+    category: 'GHL Funnels & Websites',
+    thumbnail: projectAuraRegenerative,
     shortDescription:
-      'Complete GoHighLevel SaaS architecture featuring automated sub-account provisioning, Stripe rebilling, 14-day client onboarding sequences, and pre-built pipeline stages.',
+      'High-converting patient acquisition funnel and GoHighLevel CRM architecture for Aura Regenerative Medicine, featuring private consultation booking, stem cell inquiry routing, and automated SMS patient nurture.',
     fullDescription:
-      'Engineered for a fast-scaling digital marketing agency, this comprehensive GoHighLevel snapshot was designed to turn their agency into a recurring-revenue software machine. Ramelo architected the entire sub-account structure, custom values, pre-configured appointment calendars, custom CSS dashboard branding, and automated client onboarding pipelines.',
+      'Engineered for Aura Regenerative Medicine (auraregenerative.com), a premier medical center specializing in advanced stem cell therapy, exosome protocols, and longevity treatments. Ramelo architected a bespoke GoHighLevel patient acquisition funnel with custom CSS styling, multi-step medical intake qualification surveys, automated consultation calendar scheduling, deposit collection, and instant 2-way SMS speed-to-lead follow-up sequences.',
     challenge:
-      'Manual client setup took over 4 hours per customer, resulting in high churn during the initial 30 days and frequent misconfigurations across pipelines and lead tags.',
+      'High-ticket regenerative therapy inquiries were experiencing high drop-off on generic web forms, while international and VIP patients required immediate consultation scheduling and discreet, automated follow-up sequences.',
     solution:
-      'Created a single-click deployable GHL snapshot equipped with automated Stripe checkout webhooks that provision sub-accounts, trigger a 14-day dynamic Loom-guided onboarding workflow, and auto-assign Twilio phone numbers and compliance A2P registration.',
+      'Designed and developed an elegant, high-trust GoHighLevel funnel with custom CSS/JS styling, multi-step medical intake qualification, automated consultation calendar scheduling with deposit processing via Stripe, and automated 2-way SMS/WhatsApp speed-to-lead notifications.',
     results: [
-      'Client onboarding time reduced from 4 hours to under 8 minutes',
-      '84% 90-day client retention rate across 75+ active agency sub-accounts',
-      '$48,000+ in automated monthly software rebilling revenue tracked',
+      '340% increase in qualified consultation bookings within the first 60 days',
+      'Sub-40-second speed-to-lead automated patient inquiry response via SMS/WhatsApp',
+      '$520,000+ in high-ticket stem cell & regenerative treatment pipeline generated',
     ],
-    techTags: ['GoHighLevel SaaS', 'Custom Snapshot', 'Stripe Rebilling', 'Make.com', 'Custom CSS', 'A2P 10DLC'],
-    liveUrl: 'https://agency.example.com',
-    demoBadge: 'Turnkey GHL Snapshot',
+    techTags: ['GoHighLevel Funnel', 'Custom CSS/JS', 'Medical CRM', 'Speed-to-Lead', 'Smart Calendars', 'Stripe Deposits'],
+    liveUrl: 'https://auraregenerative.com/',
+    demoBadge: 'Live Clinic Funnel',
     year: '2024 - Present',
   },
   {
@@ -422,7 +423,7 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const BY_THE_NUMBERS_EXTENDED = [
   {
-    number: '120+',
+    number: '25+',
     label: 'GHL Funnels & Snapshots',
     detail: 'Turnkey sub-accounts and high-converting marketing funnels deployed across 15+ distinct industries',
   },
@@ -432,7 +433,7 @@ export const BY_THE_NUMBERS_EXTENDED = [
     detail: 'Instant automated 2-way SMS and missed-call follow-ups ensuring zero lead drop-off',
   },
   {
-    number: '$14M+',
+    number: '$500K+',
     label: 'Pipeline Value Tracked',
     detail: 'High-ticket client sales opportunities systematically managed and closed through GHL CRM stages',
   },
